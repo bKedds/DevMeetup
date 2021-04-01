@@ -1,0 +1,40 @@
+<template>
+	<v-container>
+		<v-row wrap>
+			<v-flex xs12 mt-2>
+				<v-card>
+					<v-card-title>
+						<h4 class="primary--text">{{ meetup.title }}</h4>
+					</v-card-title>
+					<v-img :src="meetup.imageUrl" height="400px"></v-img>
+					<v-card-text
+						><div class="info--text">
+							{{ meetup.date }} - Where it takes place
+						</div>
+						<div>
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
+							laudantium placeat sunt fugiat iure officiis autem assumenda
+							vitae, architecto rerum perferendis aspernatur nulla, qui, odio
+							maiores animi labore mollitia expedita!
+						</div></v-card-text
+					>
+					<v-card-actions>
+						<v-spacer></v-spacer>
+						<v-btn class="primary">Register</v-btn>
+					</v-card-actions>
+				</v-card>
+			</v-flex>
+		</v-row>
+	</v-container>
+</template>
+
+<script>
+export default {
+	props: ["id"],
+	computed: {
+		meetup() {
+			return this.$store.getters.loadedMeetup(this.id);
+		},
+	},
+};
+</script>

@@ -6,7 +6,6 @@
 					<v-list-item
 						v-for="item in menuItems"
 						:key="item.title"
-						router
 						:to="item.link"
 					>
 						<v-list-item-action>
@@ -33,7 +32,6 @@
 						text
 						v-for="item in menuItems"
 						:key="item.tile"
-						router
 						:to="item.link"
 					>
 						<v-icon left dark>{{ item.icon }}</v-icon>
